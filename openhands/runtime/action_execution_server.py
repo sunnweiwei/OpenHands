@@ -191,12 +191,7 @@ class ActionExecutor:
     async def _init_browser_async(self):
         """Initialize the browser asynchronously."""
         logger.debug('Initializing browser asynchronously')
-        try:
-            self.browser = BrowserEnv(self.browsergym_eval_env)
-            logger.debug('Browser initialized asynchronously')
-        except Exception as e:
-            logger.error(f'Failed to initialize browser: {e}')
-            self.browser = None
+        self.browser = None
 
     async def _ensure_browser_ready(self):
         """Ensure the browser is ready for use."""
