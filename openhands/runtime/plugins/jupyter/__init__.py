@@ -34,7 +34,7 @@ class JupyterPlugin(Plugin):
         jupyter_launch_command = (
             f"{prefix}/bin/bash << 'EOF'\n"
             f'{poetry_prefix}'
-            'jupyter kernelgateway '
+            '/opt/miniconda3/envs/testbed/bin/jupyter kernelgateway '
             '--KernelGatewayApp.ip=0.0.0.0 '
             f'--KernelGatewayApp.port={self.kernel_gateway_port}\n'
             'EOF'
