@@ -24,17 +24,10 @@ class JupyterPlugin(Plugin):
         self.kernel_gateway_port = find_available_tcp_port(40000, 49999)
         self.kernel_id = kernel_id
         prefix = ''
-        code_repo_path = os.environ.get('OPENHANDS_REPO_PATH')
+        code_repo_path = '/root/OpenOpenHands'
         if not code_repo_path:
             raise ValueError(
                 'OPENHANDS_REPO_PATH environment variable is not set. '
-                'This is required for the jupyter plugin to work with LocalRuntime.'
-            )
-        # assert POETRY_VIRTUALENVS_PATH is set
-        poetry_venvs_path = os.environ.get('POETRY_VIRTUALENVS_PATH')
-        if not poetry_venvs_path:
-            raise ValueError(
-                'POETRY_VIRTUALENVS_PATH environment variable is not set. '
                 'This is required for the jupyter plugin to work with LocalRuntime.'
             )
         poetry_prefix = f'cd {code_repo_path}\n'
