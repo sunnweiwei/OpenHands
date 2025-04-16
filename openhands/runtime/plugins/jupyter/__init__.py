@@ -24,7 +24,7 @@ class JupyterPlugin(Plugin):
         self.kernel_gateway_port = find_available_tcp_port(40000, 49999)
         self.kernel_id = kernel_id
         prefix = ''
-        code_repo_path = '/root/OpenOpenHands'
+        code_repo_path = '/root/OpenHands'
         if not code_repo_path:
             raise ValueError(
                 'OPENHANDS_REPO_PATH environment variable is not set. '
